@@ -20,7 +20,7 @@ class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = settingsView
+        view = SettingsView()
         model = SettingsModel()
         configureView()
     }
@@ -31,6 +31,6 @@ class SettingsController: UIViewController {
 private extension SettingsController {
     func configureView() {
         guard let models = model?.createOptions() else { return }
-        // func configureView()
+        settingsView?.configureView(with: models)
     }
 }
