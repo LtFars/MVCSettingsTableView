@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		0338B337272AF9C00071F4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B336272AF9C00071F4C8 /* AppDelegate.swift */; };
 		0338B339272AF9C00071F4C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B338272AF9C00071F4C8 /* SceneDelegate.swift */; };
-		0338B33B272AF9C00071F4C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B33A272AF9C00071F4C8 /* ViewController.swift */; };
+		0338B33B272AF9C00071F4C8 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B33A272AF9C00071F4C8 /* SettingsController.swift */; };
 		0338B33E272AF9C00071F4C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0338B33C272AF9C00071F4C8 /* Main.storyboard */; };
 		0338B340272AF9C20071F4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0338B33F272AF9C20071F4C8 /* Assets.xcassets */; };
 		0338B343272AF9C20071F4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0338B341272AF9C20071F4C8 /* LaunchScreen.storyboard */; };
+		0338B353272AFAD60071F4C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B352272AFAD60071F4C8 /* SettingsView.swift */; };
+		0338B355272AFADF0071F4C8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338B354272AFADF0071F4C8 /* SettingsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0338B333272AF9C00071F4C8 /* MVCSettingsTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVCSettingsTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0338B336272AF9C00071F4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0338B338272AF9C00071F4C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0338B33A272AF9C00071F4C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0338B33A272AF9C00071F4C8 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		0338B33D272AF9C00071F4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0338B33F272AF9C20071F4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0338B342272AF9C20071F4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0338B344272AF9C20071F4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0338B352272AFAD60071F4C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0338B354272AFADF0071F4C8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,73 @@
 		0338B335272AF9C00071F4C8 /* MVCSettingsTableView */ = {
 			isa = PBXGroup;
 			children = (
-				0338B336272AF9C00071F4C8 /* AppDelegate.swift */,
-				0338B338272AF9C00071F4C8 /* SceneDelegate.swift */,
-				0338B33A272AF9C00071F4C8 /* ViewController.swift */,
+				0338B34B272AFA1B0071F4C8 /* Sources */,
+				0338B34A272AFA120071F4C8 /* Resources */,
+			);
+			path = MVCSettingsTableView;
+			sourceTree = "<group>";
+		};
+		0338B34A272AFA120071F4C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0338B33C272AF9C00071F4C8 /* Main.storyboard */,
 				0338B33F272AF9C20071F4C8 /* Assets.xcassets */,
 				0338B341272AF9C20071F4C8 /* LaunchScreen.storyboard */,
 				0338B344272AF9C20071F4C8 /* Info.plist */,
 			);
-			path = MVCSettingsTableView;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0338B34B272AFA1B0071F4C8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0338B34C272AFA2B0071F4C8 /* App */,
+				0338B34D272AFA350071F4C8 /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0338B34C272AFA2B0071F4C8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0338B336272AF9C00071F4C8 /* AppDelegate.swift */,
+				0338B338272AF9C00071F4C8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0338B34D272AFA350071F4C8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0338B34E272AFA830071F4C8 /* SettingsController */,
+				0338B34F272AFA8F0071F4C8 /* SettingsView */,
+				0338B350272AFAA60071F4C8 /* SettingsModel */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0338B34E272AFA830071F4C8 /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				0338B33A272AF9C00071F4C8 /* SettingsController.swift */,
+			);
+			path = SettingsController;
+			sourceTree = "<group>";
+		};
+		0338B34F272AFA8F0071F4C8 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				0338B352272AFAD60071F4C8 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		0338B350272AFAA60071F4C8 /* SettingsModel */ = {
+			isa = PBXGroup;
+			children = (
+				0338B354272AFADF0071F4C8 /* SettingsModel.swift */,
+			);
+			path = SettingsModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0338B33B272AF9C00071F4C8 /* ViewController.swift in Sources */,
+				0338B33B272AF9C00071F4C8 /* SettingsController.swift in Sources */,
+				0338B355272AFADF0071F4C8 /* SettingsModel.swift in Sources */,
+				0338B353272AFAD60071F4C8 /* SettingsView.swift in Sources */,
 				0338B337272AF9C00071F4C8 /* AppDelegate.swift in Sources */,
 				0338B339272AF9C00071F4C8 /* SceneDelegate.swift in Sources */,
 			);
@@ -291,7 +355,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F8F75VZQ49;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MVCSettingsTableView/Info.plist;
+				INFOPLIST_FILE = MVCSettingsTableView/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F8F75VZQ49;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MVCSettingsTableView/Info.plist;
+				INFOPLIST_FILE = MVCSettingsTableView/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
