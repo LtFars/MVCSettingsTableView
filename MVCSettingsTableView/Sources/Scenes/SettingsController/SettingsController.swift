@@ -20,7 +20,9 @@ class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view = settingsView
+        model = SettingsModel()
+        configureView()
     }
 }
 
@@ -28,6 +30,7 @@ class SettingsController: UIViewController {
 
 private extension SettingsController {
     func configureView() {
-        
+        guard let models = model?.createOptions() else { return }
+        // func configureView()
     }
 }
