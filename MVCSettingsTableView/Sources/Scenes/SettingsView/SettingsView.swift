@@ -77,8 +77,6 @@ extension SettingsView: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.configure(with: model)
-//        cell.layer.cornerRadius = 8
-//        cell.layer.masksToBounds = true
         return cell
     }
 }
@@ -88,6 +86,7 @@ extension SettingsView: UITableViewDataSource {
 extension SettingsView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //  TODO: create tappeble cells
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("Была нажата ячейка \(models[indexPath.section].option[indexPath.row].title)")
     }
 }
