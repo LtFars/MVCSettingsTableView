@@ -23,6 +23,8 @@ class SettingsController: UIViewController {
         view = SettingsView()
         model = SettingsModel()
         configureView()
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
 }
 

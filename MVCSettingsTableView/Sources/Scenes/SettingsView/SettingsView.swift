@@ -20,11 +20,14 @@ class SettingsView: UIView {
     private var models = [Section]()
     
     //  MARK: - Elements
-    
-    private let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = .white
-        //table.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+        
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         return tableView
     }()
     
@@ -34,7 +37,6 @@ class SettingsView: UIView {
         super.init(frame: .zero)
         setupHierarchy()
         setupLayots()
-        setupDelegates()
     }
     
     required init?(coder: NSCoder) {
@@ -48,12 +50,10 @@ class SettingsView: UIView {
     }
     
     private func setupLayots() {
-        //tableView.frame = bounds
-    }
-    
-    private func setupDelegates() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }
 
@@ -70,7 +70,16 @@ extension SettingsView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let model = models[indexPath.section].option[indexPath.row]
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: model)
+//        cell.layer.cornerRadius = 8
+//        cell.layer.masksToBounds = true
+        return cell
     }
 }
 

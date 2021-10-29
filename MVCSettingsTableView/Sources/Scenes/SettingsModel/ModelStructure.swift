@@ -14,7 +14,7 @@ struct Section {
 
 struct SettingsCellOption {
     let title: String
-    let additionLabel: String
+    let additionLabel: String?
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     var isSwitchButton: Bool
