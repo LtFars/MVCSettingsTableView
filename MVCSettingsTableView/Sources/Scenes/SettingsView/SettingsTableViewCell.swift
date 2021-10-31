@@ -92,7 +92,7 @@ class SettingsTableViewCell: UITableViewCell {
                              height: contentView.frame.size.height)
         
         additionalLabel.frame = CGRect(x: (contentView.frame.size.width - contentView.frame.size.width / 1.9),
-                             y: (contentView.frame.size.height / 10),
+                             y: (contentView.frame.size.height / 7),
                              width: contentView.frame.size.width / 2,
                              height: iconContainer.frame.size.height)
 
@@ -100,7 +100,6 @@ class SettingsTableViewCell: UITableViewCell {
                                 y: (contentView.frame.size.height - switchElement.frame.size.height) / 2,
                                 width: switchElement.frame.size.width - 10,
                                 height: switchElement.frame.size.height - 10)
-                                     
     }
     
     //  MARK: - prepareForReuse
