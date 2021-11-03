@@ -96,10 +96,10 @@ class SettingsTableViewCell: UITableViewCell {
                              width: contentView.frame.size.width / 2,
                              height: iconContainer.frame.size.height)
 
-        switchElement.frame = CGRect(x: (contentView.frame.size.width - switchElement.frame.size.width) + 10,
-                                y: (contentView.frame.size.height - switchElement.frame.size.height) / 2,
-                                width: switchElement.frame.size.width - 10,
-                                height: switchElement.frame.size.height - 10)
+        switchElement.frame = CGRect(x: (contentView.frame.size.width - switchElement.frame.size.width + 10),
+                            y: (contentView.frame.size.height - switchElement.frame.size.height) / 2,
+                            width: switchElement.frame.size.width,
+                            height: switchElement.frame.size.height)
     }
     
     //  MARK: - prepareForReuse
@@ -111,6 +111,8 @@ class SettingsTableViewCell: UITableViewCell {
         iconContainer.backgroundColor = nil
         additionalLabel.text = ""
         switchElement.isOn = false
+        accessoryType = .none
+        switchElement.removeFromSuperview()
     }
     
     //  MARK: - Configure
@@ -120,7 +122,6 @@ class SettingsTableViewCell: UITableViewCell {
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
         additionalLabel.text = model.additionLabel
-        
         model.isSwitchButton ? (contentView.addSubview(switchElement)) : (accessoryType = .disclosureIndicator)
     }
 }
